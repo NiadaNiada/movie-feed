@@ -1,27 +1,18 @@
-import React, { Component } from 'react';
-import {withRouter} from 'react-router';
+import React from 'react';
+import {withRouter, useHistory} from 'react-router';
 import Movie from './Movie';
 import './Movie.css';
 
-class MovieList extends Component {
-    state = {
-        id: null,
-        movieDetails: false
-    };
+const MovieList = props => {
 
-    selectedMovieHandler = movieId => {
+    const history = useHistory();
+
+    const selectedMovieHandler = movieId => {
         if (movieId !== null) {
-            this.setState({ id: movieId, movieDetails: true });
-            this.props.history.push(`/${movieId}`)
-
+            history.push(`/${movieId}`)
         }
-        console.log(movieId)
     };
-
-
-
-    render() {
-        const { error, loading, movies } = this.props;
+        const { error, loading, movies } = props;
         let movieInfo = null;
 
         if (!loading && !error && movies.length > 0) {
@@ -38,7 +29,7 @@ class MovieList extends Component {
                             duration={movie.runtime}
                             poster={movie.poster_path}
                             released={movie.release_date}
-                            onClick={()=>this.selectedMovieHandler(movie.id)}
+                            onClick={()=>selectedMovieHandler(movie.id)}
                         />
                         </div>
                 );
@@ -61,9 +52,7 @@ class MovieList extends Component {
             <div className="movies">
                         {movieInfo}
                 </div>
-
         );
-    }
 }
 
 export default withRouter(MovieList);

@@ -14,10 +14,7 @@ const Latest = () => {
             history.push(`/${movie.id}`)
 
         }
-        console.log(movie.id)
     };
-
-
 
     useEffect(() => {
         async function fetchLatest() {
