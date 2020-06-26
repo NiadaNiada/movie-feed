@@ -1,16 +1,22 @@
 import React from 'react';
-import NowPlaying from './NowPlaying';
-import Latest from './Latest';
-import Upcoming from './Upcoming';
+import NowPlaying from '../nowPlaying/NowPlaying';
+import Latest from '../latest/Latest';
+import Upcoming from '../upcoming/Upcoming';
+import './Container.css'
+import { withRouter } from "react-router";
+import Details from "../details/Details";
+import Popular from "../popular/Popular";
 
-const Container = () => {
+
+const Container = props => {
     return (
         <div className="container">
             <NowPlaying/>
-            <Latest/>
+            <Popular/>
             <Upcoming/>
+            {(props.match.params.movieId) && <Details /> }
         </div>
     );
 }
 
-export default Container;
+export default withRouter(Container);

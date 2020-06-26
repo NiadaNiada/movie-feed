@@ -1,0 +1,26 @@
+.movies {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.movie-list {
+    display: inline-block;
+}
+
+.movie-component {
+    margin: 5px;
+    border: 5px solid white;
+    cursor: pointer;
+}
+
+.no-movie-poster {
+    height: 450px;
+    width: 300px;
+    background-image: url("../../images/no_image.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5px;
+    border: 5px solid white;
+    cursor: pointer;
+}

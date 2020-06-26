@@ -4,19 +4,16 @@ import "./Header.css";
 
 const Header = () => {
     return (
-        <div className="rmdb-header">
-            <div className="rmdb-header-content">
+        <div className="header">
+            <div className="header-content">
                 <Link to="/">
                     <div
-                        className="rmdb-logo"
+                        className="header-logo"
                     />
-                    <div className="title">
+                    <div className="header-title">
                     Enjoy best movies
                     </div>
                 </Link>
-                <div
-                    className="rmdb-tmdb-logo"
-                />
             </div>
         </div>
     );

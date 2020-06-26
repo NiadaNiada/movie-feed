@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './components/header/Header'
+import Container from './components/Home/Container'
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import NotFound from "./components/notFound/NotFound";
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+          <React.Fragment>
+              <Header />
+              <Switch>
+                  <Route path="/:movieId?" component={Container} exact />
+                  <Route component={NotFound} />
+              </Switch>
+              <footer className="footer">©Copyright Diana Arsenii 2020</footer>
+          </React.Fragment>
+      </BrowserRouter>
   );
 }
 

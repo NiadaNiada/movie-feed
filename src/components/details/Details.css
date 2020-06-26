@@ -1,0 +1,116 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.75);
+    display: block;
+    overflow-y: auto;
+}
+
+.movie-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-details-title {
+    font-size: xx-large;
+    text-align: center;
+}
+
+.movie-details-info {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-details {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.movie-details-overview {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+.movie-details-genres {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: initial;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.movie-details-genres p {
+    padding-right: 5px;
+}
+.movie-details-genres strong {
+    padding-right: 5px;
+}
+
+
+.border{
+    height: 2px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn {
+    float: right;
+    color: black;
+    background-color: whitesmoke;
+    border: none;
+    height: 40px;
+    width: 40px;
+}
+.icon {
+    padding-right: 7px;
+}
+
+.close-btn:active {
+    outline: none;
+    border: none;
+}
+.close-btn:hover {
+     cursor: pointer;
+ }
+
+.movie-details-poster {
+    border-radius: 10px;
+    border: solid white 5px;
+    grid-row: 2;
+}
+
+.movie-details-poster-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.no-movie-poster {
+    height: 450px;
+    width: 300px;
+    background-image: url("../../images/no_image.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5px;
+    border: 5px solid white;
+}
+

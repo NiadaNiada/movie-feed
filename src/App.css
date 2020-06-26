@@ -1,3 +1,10 @@
+body {
+  background: black;
+  color: white;
+  font-family: 'Abel', sans-serif;
+  font-size: larger;
+}
+
 .App {
   text-align: center;
 }
@@ -12,7 +19,12 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.footer{
+  padding-left: 2%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -1,12 +1,12 @@
-.rmdb-header {
+.header {
     width: 100%;
     height: auto;
-    background: #1c1c1c;
+    background: black;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
-.rmdb-header-content {
+.header-content {
     max-width: 1280px;
     min-height: 120px;
     height: auto;
@@ -14,42 +14,41 @@
     margin: 0 auto;
     box-sizing: border-box;
     overflow: hidden;
+    display: flex;
 }
 
-.rmdb-logo {
+.header-content a {
+    text-decoration: none;
+}
+
+.header-logo {
     width: 300px;
     height: 100px;
-    background-color: #1c1c1c;
     margin-top: 20px;
     float: left;
-    background-image: url("../images/camera.png");
+    background-image: url("../../images/tmdbIcon.png");
     background-size: contain;
-    color: white;
+    background-repeat: no-repeat;
 }
 
-.rmdb-tmdb-logo {
-    width: 122px;
-    margin-top: 25px;
-    float: right;
-    background-image: url("../images/popcorn.jpg");
-    background-size: contain;
-}
-.title {
-    color: aliceblue;
+.header-title {
+    color: white;
+    font-size: x-large;
+    text-decoration: none;
 }
 @media screen and (max-width: 500px) {
-    .rmdb-header-content {
+    .header-content {
         max-width: 1280px;
         min-height: 0px;
     }
 
-    .rmdb-tmdb-logo {
+    .logo {
         display: inline-block;
         width:80px;
         margin-top: 0px;
     }
 
-    .rmdb-logo {
+    .logo {
         width: 150px;
         margin-top: 5px;
     }
