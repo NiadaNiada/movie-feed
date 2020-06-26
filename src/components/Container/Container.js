@@ -1,11 +1,11 @@
 import React from 'react';
-import NowPlaying from '../nowPlaying/NowPlaying';
-import Latest from '../latest/Latest';
-import Upcoming from '../upcoming/Upcoming';
+import NowPlaying from '../NowPlaying/NowPlaying';
+import Latest from '../Latest/Latest';
+import Upcoming from '../Upcoming/Upcoming';
 import './Container.css'
 import { withRouter } from "react-router";
-import Details from "../details/Details";
-import Popular from "../popular/Popular";
+import Details from "../Details/Details";
+import Popular from "../Popular/Popular";
 
 
 const Container = props => {

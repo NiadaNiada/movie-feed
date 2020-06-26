@@ -1,5 +1,5 @@
 import React from 'react';
-import { BASE_POSTER_PATH } from '../../constants/Constants';
+import { BASE_POSTER_PATH } from '../../Constants/Constants';
 import './Movie.css';
 
 const Movie = props => {

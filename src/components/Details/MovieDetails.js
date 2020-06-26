@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BASE_POSTER_PATH,} from '../../constants/Constants';
+import {BASE_POSTER_PATH,} from '../../Constants/Constants';
 import './Details.css';
 import PropTypes from "prop-types";
 import {dateFormat, calcTime} from "../../helper";

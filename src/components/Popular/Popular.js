@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MovieList from '../../components/movie/MovieList';
-import * as movieAPI from '../../services/Services';
+import MovieList from '../Movie/MovieList';
+import * as movieAPI from '../../Services/Services';
 import './Popular.css';
 
 export default class Popular extends Component {
@@ -11,12 +11,7 @@ export default class Popular extends Component {
     };
 
     async componentDidMount() {
-        try {
-            const movies = await movieAPI.getPopular();
-            this.setState({ movies, loading: false });
-        } catch (err) {
-            this.setState({ loading: false, error: true });
-        }
+        movieAPI.getPopular().then(data => this.setState({ ...this.state, movies: data, loading: false, error: false })).catch(error => this.setState({...this.state, error}))
     }
 
     render() {

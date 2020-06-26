@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import * as movieAPI from '../../services/Services';
+import * as movieAPI from '../../Services/Services';
 import './Latest.css';
-import Movie from "../movie/Movie";
+import Movie from "../Movie/Movie";
 import {withRouter} from 'react-router';
 import { useHistory} from 'react-router';
 

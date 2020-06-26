@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MovieList from '../../components/movie/MovieList';
-import * as movieAPI from '../../services/Services';
+import MovieList from '../Movie/MovieList';
+import * as movieAPI from '../../Services/Services';
 import './NowPlaying.css';
 
 export default class NowPlaying extends Component {
@@ -11,18 +11,13 @@ export default class NowPlaying extends Component {
     };
 
     async componentDidMount() {
-        try {
-            const movies = await movieAPI.getNowPlaying();
-            this.setState({ movies, loading: false });
-        } catch (err) {
-            this.setState({ loading: false, error: true });
-        }
+        movieAPI.getNowPlaying().then(data => this.setState({ ...this.state, movies: data, loading: false, error: false })).catch(error => this.setState({...this.state, error}))
     }
 
     render() {
         return (
             <div className="now-playing">
-                <h1 className="now-playing-title">Playing Now</h1>
+                <h1 className="now-playing-title">Playing Now Movies</h1>
                 <MovieList
                     loading={this.state.loading}
                     error={this.state.error}
