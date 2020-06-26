@@ -21,7 +21,7 @@ export default class Popular extends Component {
 
     render() {
         return (
-            <div className="popular">
+            <div className="popular" data-testid="popular-movies">
                 <h1 className="popular-title">Popular Movies</h1>
                 <MovieList
                     loading={this.state.loading}

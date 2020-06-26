@@ -9,6 +9,7 @@ const Movie = props => {
                  onClick={() => props.onClick()}>
                 {props.poster && (
                     <img
+                        data-testid="movie-poster"
                         src={`${BASE_POSTER_PATH}/w300${props.poster}`}
                         alt="movie poster"
                         className="movie-poster"
@@ -18,7 +19,8 @@ const Movie = props => {
         )
     }
     return (
-        <div className="no-movie-poster"
+        <div data-testid="no-movie-poster"
+            className="no-movie-poster"
              onClick={() => props.onClick()}/>
 
     )
