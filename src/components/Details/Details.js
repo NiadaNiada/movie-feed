@@ -14,7 +14,12 @@ class Details extends Component {
 
     componentDidMount() {
         if (this.props.match.params.movieId) {
-            getMovieDetailsById(this.props.match.params.movieId).then(data => this.setState({ ...this.state, movieInfo: data, loading: false, error: false })).catch(error => this.setState({...this.state, error}))
+            getMovieDetailsById(this.props.match.params.movieId).then(data => this.setState({
+                ...this.state,
+                movieInfo: data,
+                loading: false,
+                error: false
+            })).catch(error => this.setState({...this.state, error}))
         }
     }
 

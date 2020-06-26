@@ -2,8 +2,7 @@ import React, {useEffect, useState} from 'react';
 import * as movieAPI from '../../Services/Services';
 import './Latest.css';
 import Movie from "../Movie/Movie";
-import {withRouter} from 'react-router';
-import { useHistory} from 'react-router';
+import {useHistory, withRouter} from 'react-router';
 
 const Latest = () => {
     const [movie, setMovie] = useState({})
@@ -31,15 +30,9 @@ const Latest = () => {
             <div className="latest">
                 <h1>Latest Movie</h1>
                 <Movie
-                    onClick={()=>selectedMovieHandler(movie.id)}
+                    onClick={() => selectedMovieHandler(movie.id)}
                 />
             </div>
-        )
-    } else {
-        return (
-            <>
-                <h1>Latest Movie: {movie.title}</h1>
-            </>
         )
     }
 }

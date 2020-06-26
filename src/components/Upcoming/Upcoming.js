@@ -10,8 +10,13 @@ export default class Upcoming extends Component {
         error: false,
     };
 
-    async componentDidMount() {
-        movieAPI.getUpcoming().then(data => this.setState({ ...this.state, movies: data, loading: false, error: false })).catch(error => this.setState({...this.state, error}))
+    componentDidMount() {
+        movieAPI.getUpcoming().then(data => this.setState({
+            ...this.state,
+            movies: data,
+            loading: false,
+            error: false
+        })).catch(error => this.setState({...this.state, error}))
     }
 
     render() {

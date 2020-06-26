@@ -1,8 +1,5 @@
 import axios from 'axios';
-import {
-    API_KEY,
-    BASE_MOVIE_PATH,
-} from '../Constants/Constants';
+import {API_KEY, BASE_MOVIE_PATH,} from '../Constants/Constants';
 
 
 export const getNowPlaying = async () => {

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BASE_POSTER_PATH,} from '../../Constants/Constants';
 import './Details.css';
 import PropTypes from "prop-types";
-import {dateFormat, calcTime} from "../../helper";
+import {calcTime, dateFormat} from "../../helper";
 import FontAwesome from "react-fontawesome";
 
 class MovieDetails extends Component {
@@ -19,7 +19,7 @@ class MovieDetails extends Component {
                             src={`${BASE_POSTER_PATH}/w500${movieInfo.poster_path}`}
                             alt="movie poster"
                         />) : (
-                            <div className="no-movie-poster" />
+                            <div className="no-movie-poster"/>
                         )}
 
                         <div className="movie-details-info">
@@ -31,7 +31,9 @@ class MovieDetails extends Component {
                             <span className="border"></span>
                             <div className="movie-details">
                                 <FontAwesome className="icon" name="calendar"/>
-                                {movieInfo.release_date ? (<strong>Release Date: {dateFormat(movieInfo.release_date)}</strong> ) : (<strong>No release date available</strong>)}
+                                {movieInfo.release_date ? (
+                                    <strong>Release Date: {dateFormat(movieInfo.release_date)}</strong>) : (
+                                    <strong>No release date available</strong>)}
                             </div>
                             <span className="border"></span>
                             <div className="movie-details-genres">
@@ -51,14 +53,15 @@ class MovieDetails extends Component {
                             <span className="border"></span>
                             <div className="movie-details">
                                 <FontAwesome className="icon" name="history"/>
-                                {movieInfo.runtime ? (<strong>Duration: {calcTime(movieInfo.runtime)}</strong> ) : (<strong>No duration available</strong>)}
+                                {movieInfo.runtime ? (<strong>Duration: {calcTime(movieInfo.runtime)}</strong>) : (
+                                    <strong>No duration available</strong>)}
                             </div>
                             <span className="border"></span>
                             <div className="movie-details">
                                 <FontAwesome className="icon" name="star"/>
-                            {movieInfo.vote_average ? (
-                                <strong>Average Rating: {movieInfo.vote_average}</strong>
-                            ) : (<strong>No rating available</strong>)}
+                                {movieInfo.vote_average ? (
+                                    <strong>Average Rating: {movieInfo.vote_average}</strong>
+                                ) : (<strong>No rating available</strong>)}
                             </div>
                         </div>
                     </div>

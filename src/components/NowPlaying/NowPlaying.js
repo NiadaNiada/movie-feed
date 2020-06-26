@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import MovieList from '../Movie/MovieList';
 import * as movieAPI from '../../Services/Services';
 import './NowPlaying.css';
@@ -10,8 +10,13 @@ export default class NowPlaying extends Component {
         error: false,
     };
 
-    async componentDidMount() {
-        movieAPI.getNowPlaying().then(data => this.setState({ ...this.state, movies: data, loading: false, error: false })).catch(error => this.setState({...this.state, error}))
+    componentDidMount() {
+        movieAPI.getNowPlaying().then(data => this.setState({
+            ...this.state,
+            movies: data,
+            loading: false,
+            error: false
+        })).catch(error => this.setState({...this.state, error}))
     }
 
     render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
                         className="header-logo"
                     />
                     <div className="header-title">
-                    Enjoy best movies
+                        Enjoy best movies
                     </div>
                 </Link>
             </div>

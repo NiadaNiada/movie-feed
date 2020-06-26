@@ -1,9 +1,8 @@
 import React from 'react';
 import NowPlaying from '../NowPlaying/NowPlaying';
-import Latest from '../Latest/Latest';
 import Upcoming from '../Upcoming/Upcoming';
 import './Container.css'
-import { withRouter } from "react-router";
+import {withRouter} from "react-router";
 import Details from "../Details/Details";
 import Popular from "../Popular/Popular";
 
@@ -14,7 +13,7 @@ const Container = props => {
             <NowPlaying/>
             <Popular/>
             <Upcoming/>
-            {(props.match.params.movieId) && <Details /> }
+            {(props.match.params.movieId) && <Details/>}
         </div>
     );
 }

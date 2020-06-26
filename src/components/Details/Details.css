@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0, 0, 0, 0.75);
     display: block;
     overflow-y: auto;
 }
@@ -32,6 +32,7 @@
     margin-right: auto;
     margin-bottom: 10px;
 }
+
 .movie-details-overview {
     margin-left: auto;
     margin-right: auto;
@@ -54,12 +55,13 @@
 .movie-details-genres p {
     padding-right: 5px;
 }
+
 .movie-details-genres strong {
     padding-right: 5px;
 }
 
 
-.border{
+.border {
     height: 2px;
     width: 30%;
     margin-left: auto;
@@ -79,6 +81,7 @@
     height: 40px;
     width: 40px;
 }
+
 .icon {
     padding-right: 7px;
 }
@@ -87,9 +90,10 @@
     outline: none;
     border: none;
 }
+
 .close-btn:hover {
-     cursor: pointer;
- }
+    cursor: pointer;
+}
 
 .movie-details-poster {
     border-radius: 10px;
@@ -104,6 +108,7 @@
     align-items: center;
     padding: 20px;
 }
+
 .no-movie-poster {
     height: 450px;
     width: 300px;

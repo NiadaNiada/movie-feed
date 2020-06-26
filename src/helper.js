@@ -7,9 +7,9 @@ export const calcTime = (time) => {
 export const dateFormat = (date) => {
     const d = new Date(date);
     return d.toLocaleDateString('en-GB', {
-        day : 'numeric',
-        month : 'short',
-        year : 'numeric'
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
     }).split(' ').join('-');
 
 }

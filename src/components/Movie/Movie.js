@@ -1,12 +1,12 @@
 import React from 'react';
-import { BASE_POSTER_PATH } from '../../Constants/Constants';
+import {BASE_POSTER_PATH} from '../../Constants/Constants';
 import './Movie.css';
 
 const Movie = props => {
-    if (props.poster){
+    if (props.poster) {
         return (
             <div className="movie-component"
-            onClick={()=> props.onClick()}>
+                 onClick={() => props.onClick()}>
                 {props.poster && (
                     <img
                         src={`${BASE_POSTER_PATH}/w300${props.poster}`}
@@ -19,7 +19,7 @@ const Movie = props => {
     }
     return (
         <div className="no-movie-poster"
-             onClick={()=> props.onClick()}/>
+             onClick={() => props.onClick()}/>
 
     )
 
