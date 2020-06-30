@@ -6,6 +6,7 @@ const Movie = props => {
     if (props.poster) {
         return (
             <div className="movie-component"
+                 data-testid="movie-component"
                  onClick={() => props.onClick()}>
                 {props.poster && (
                     <img
@@ -24,8 +25,6 @@ const Movie = props => {
              onClick={() => props.onClick()}/>
 
     )
-
 }
-
 
 export default Movie;

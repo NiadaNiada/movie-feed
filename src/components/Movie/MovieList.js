@@ -18,7 +18,7 @@ const MovieList = props => {
     if (!loading && !error && movies.length > 0) {
         movieInfo = movies.map(movie => {
             return (
-                <div className="movie-list" key={movie.id}>
+                <div className="movie-list" data-testid="movie-list" key={movie.id}>
                     <Movie
                         key={movie.id}
                         title={movie.title}
@@ -39,7 +39,7 @@ const MovieList = props => {
     if (error) {
         movieInfo = (
             <h3>
-                Woops, something went wrong trying to fetch movies in theaters now.
+                Woops, something went wrong trying to fetch movies.
             </h3>
         );
     }
@@ -49,7 +49,7 @@ const MovieList = props => {
     }
 
     return (
-        <div className="movies">
+        <div className="movies" data-testid="movies">
             {movieInfo}
         </div>
     );
