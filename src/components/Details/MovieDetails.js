@@ -71,34 +71,38 @@ const MovieDetails = ({movieInfo}) => {
 }
 
 MovieDetails.propTypes = {
-    movieInfo: PropTypes.exact({
-        adult: PropTypes.bool,
-        title: PropTypes.string,
-        overview: PropTypes.string,
-        release_date: PropTypes.string,
-        genres: PropTypes.array,
-        vote_average: PropTypes.number,
-        runtime: PropTypes.number || null,
-        poster: PropTypes.string,
-        backdrop_path: PropTypes.string || null,
-        belongs_to_collection: PropTypes.string || null,
-        budget: PropTypes.number,
-        homepage: PropTypes.string || null,
-        id: PropTypes.number,
-        imdb_id: PropTypes.string || null,
-        original_language: PropTypes.string,
-        original_title: PropTypes.string,
-        popularity: PropTypes.number,
-        poster_path: PropTypes.string || null,
-        production_companies: PropTypes.array,
-        production_countries: PropTypes.array,
-        revenue: PropTypes.number,
-        spoken_languages: PropTypes.array,
-        status: PropTypes.string,
-        tagline: PropTypes.string || null,
-        video: PropTypes.bool,
-        vote_count: PropTypes.number
-    })
+    movieInfo: PropTypes.object.isRequired,
 };
+
+// MovieDetails.propTypes = {
+//     movieInfo: PropTypes.exact({
+//         adult: PropTypes.bool,
+//         title: PropTypes.string,
+//         overview: PropTypes.string,
+//         release_date: PropTypes.string,
+//         genres: PropTypes.array,
+//         vote_average: PropTypes.number,
+//         runtime: PropTypes.number || null,
+//         poster: PropTypes.string,
+//         backdrop_path: PropTypes.string || null,
+//         belongs_to_collection: PropTypes.string || null,
+//         budget: PropTypes.number,
+//         homepage: PropTypes.string || null,
+//         id: PropTypes.number,
+//         imdb_id: PropTypes.string || null,
+//         original_language: PropTypes.string,
+//         original_title: PropTypes.string,
+//         popularity: PropTypes.number,
+//         poster_path: PropTypes.string || null,
+//         production_companies: PropTypes.array,
+//         production_countries: PropTypes.array,
+//         revenue: PropTypes.number,
+//         spoken_languages: PropTypes.array,
+//         status: PropTypes.string,
+//         tagline: PropTypes.string || null,
+//         video: PropTypes.bool,
+//         vote_count: PropTypes.number
+//     })
+// };
 
 export default MovieDetails;

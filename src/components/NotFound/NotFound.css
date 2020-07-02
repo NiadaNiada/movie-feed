@@ -1,8 +1,16 @@
 .image-not-found {
-    background-image: url("../../images/404-not-found.gif");
+    background-image: url("../../images/404-not-found.png");
     background-repeat: no-repeat;
     background-size: contain;
     height: 500px;
     width: 500px;
     margin: 20%;
+}
+
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: available;
 }
