@@ -1,14 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {BASE_POSTER_PATH,} from '../../Constants/Constants';
 import './Details.css';
 import PropTypes from "prop-types";
 import {calcTime, dateFormat} from "../../helper";
 import FontAwesome from "react-fontawesome";
 
-class MovieDetails extends Component {
-
-    render() {
-        const {movieInfo} = this.props;
+const MovieDetails = ({movieInfo}) => {
 
         if (movieInfo) {
             return (
@@ -71,7 +68,6 @@ class MovieDetails extends Component {
         return (
             <div className="modal">No Movie Found</div>
         )
-    }
 }
 
 MovieDetails.propTypes = {

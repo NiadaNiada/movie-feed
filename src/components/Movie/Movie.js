@@ -3,6 +3,7 @@ import {BASE_POSTER_PATH} from '../../Constants/Constants';
 import './Movie.css';
 
 const Movie = props => {
+
     if (props.poster) {
         return (
             <div className="movie-component"
@@ -23,7 +24,6 @@ const Movie = props => {
         <div data-testid="no-movie-poster"
             className="no-movie-poster"
              onClick={() => props.onClick()}/>
-
     )
 }
 

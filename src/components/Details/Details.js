@@ -1,73 +1,81 @@
-import React, {Component} from 'react';
+import React, {useEffect, useState} from 'react';
 import {getMovieDetailsById} from '../../Services/Services';
 import MovieDetails from './MovieDetails';
-import {withRouter} from 'react-router';
+import {useHistory, useParams, withRouter} from 'react-router';
 import FontAwesome from "react-fontawesome";
 import './Details.css';
 
-class Details extends Component {
-    state = {
+const Details = () => {
+    const [state, setState] = useState({
         movieInfo: null,
-        loading: true,
-        error: true
-    };
+        loading: false,
+        error: false
+    });
+    const {movieInfo, loading, error} = state;
+    const {movieId} = useParams();
+    const history = useHistory();
 
-    componentDidMount() {
-        if (this.props.match.params.movieId) {
-            getMovieDetailsById(this.props.match.params.movieId).then(data => this.setState({
-                ...this.state,
+    useEffect(() => {
+        if (movieId) {
+            setState(prevState => ({
+                ...prevState,
+                loading: true,
+            }))
+            getMovieDetailsById(movieId).then(data => setState({
                 movieInfo: data,
                 loading: false,
                 error: false
-            })).catch(error => this.setState({...this.state, error}))
+            })).catch(error => setState({
+                movieInfo: null,
+                loading: false,
+                error: !!error
+            }));
         }
-    }
+    },[movieId])
 
-    closeModal = () => {
-        this.props.history.push("/")
+    const closeModal = () => {
+        history.push("/")
         const body = document.body;
         body.style.overflow = "auto";
     }
 
-    render() {
-        const body = document.body;
-        body.style.overflow = "hidden";
-        const {movieInfo, loading, error} = this.state;
+    const body = document.body;
+    body.style.overflow = "hidden";
 
-        let movieDetails = null;
 
-        if (error) {
-            movieDetails = (
-                <h3>Woops, something went wrong trying to fetch movie details.</h3>
-            );
-        }
+    let movieDetails = null;
 
-        if (loading) {
-            movieDetails = (
-                <>
-                    <h1>Movie Details</h1>
-                    <h3>Loading movie details now...</h3>
-                </>
-            );
-        } else if (movieInfo) {
-            movieDetails = (
-                <div className="movie-details-wrapper">
-                    <div className="movie-details-title">
-                        <h1>{movieInfo.title}</h1>
-                    </div>
-                    <MovieDetails
-                        movieInfo={movieInfo}
-                    />
-                </div>
-            );
-        }
-
-        return <div className="modal">
-            <button className="close-btn" onClick={this.closeModal}>
-                <FontAwesome className="fa-times" name="times" size="2x"/>
-            </button>
-            {movieDetails}</div>;
+    if (error) {
+        movieDetails = (
+            <h3>Woops, something went wrong trying to fetch movie details.</h3>
+        );
     }
+
+    if (loading) {
+        movieDetails = (
+            <>
+                <h1>Movie Details</h1>
+                <h3>Loading movie details now...</h3>
+            </>
+        );
+    } else if (movieInfo) {
+        movieDetails = (
+            <div className="movie-details-wrapper">
+                <div className="movie-details-title">
+                    <h1>{movieInfo.title}</h1>
+                </div>
+                <MovieDetails
+                    movieInfo={movieInfo}
+                />
+            </div>
+        );
+    }
+
+    return <div className="modal">
+        <button className="close-btn" onClick={closeModal}>
+            <FontAwesome className="fa-times" name="times" size="2x"/>
+        </button>
+        {movieDetails}</div>;
 }
 
 export default withRouter(Details);
